@@ -87,7 +87,15 @@ public class WordSearchTest {
 		WordSearch hobbit = new WordSearch();
 		String shortList = "NORI";
 		ArrayList<String> result = hobbit.search(wordMatrix, shortList);
-		assertThat(result, contains("NORI (8,7) (8,8) (8,9) (8,10)"));
+		assertThat(result, contains("NORI (7,8) (8,8) (9,8) (10,8)"));
+	}
+	
+	@Test
+	public void shouldReturnVerticaForwardsWordsWithCoordinates() {
+		WordSearch hobbit = new WordSearch();
+		String shortList = "THORIN";
+		ArrayList<String> result = hobbit.search(wordMatrix, shortList);
+		assertThat(result, contains("THORIN (12,1) (12,2) (12,3) (12,4) (12,5) (12,6)"));
 	}
 	
 }

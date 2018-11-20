@@ -1,6 +1,7 @@
 package wordSearch;
 
 
+import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.junit.Assert.assertThat;
 
@@ -74,13 +75,19 @@ public class WordSearchTest {
 //		assertThat(result, containsInAnyOrder("BALIN", "SMAUG","BARD"));	
 //	}
 	
+//	@Test
+//	public void shouldFindHorizontalForwardsWords() {
+//		WordSearch hobbit = new WordSearch();
+//		ArrayList<String> result = hobbit.search(wordMatrix, wordList);
+//		assertThat(result, containsInAnyOrder("NORI", "WILLIAM", "ORI", "SMAUG","BILBOBAGGINS", "BERT"));
+//	}
+	
 	@Test
-	public void shouldFindHorizontalForwardsWords() {
+	public void shouldReturnHorizontalForwardWordsWithCoordinates() {
 		WordSearch hobbit = new WordSearch();
-		ArrayList<String> result = hobbit.search(wordMatrix, wordList);
-		assertThat(result, containsInAnyOrder("NORI", "WILLIAM", "ORI", "SMAUG","BILBOBAGGINS", "BERT"));
+		String shortList = "NORI";
+		ArrayList<String> result = hobbit.search(wordMatrix, shortList);
+		assertThat(result, contains("NORI (8,7) (8,8) (8,9) (8,10)"));
 	}
-	
-	
 	
 }

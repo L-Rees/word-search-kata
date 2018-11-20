@@ -1,11 +1,11 @@
 package wordSearch;
 
-import static org.hamcrest.Matchers.contains;
+
 import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.junit.Assert.assertThat;
 
 import java.util.ArrayList;
-import java.util.List;
+
 
 import org.junit.Test;
 
@@ -66,14 +66,20 @@ public class WordSearchTest {
 			"WILLIAM";
 	
 
-	@Test
-	public void shouldReturnWords() {
-		WordSearch hobbit = new WordSearch();
-		String shortList = "BALIN BARD SMAUG";
-		ArrayList<String> result = hobbit.search(wordMatrix, shortList);
-		assertThat(result, containsInAnyOrder("BALIN", "SMAUG","BARD"));	
-	}
+//	@Test
+//	public void shouldReturnWords() {
+//		WordSearch hobbit = new WordSearch();
+//		String shortList = "BALIN BARD SMAUG";
+//		ArrayList<String> result = hobbit.search(wordMatrix, shortList);
+//		assertThat(result, containsInAnyOrder("BALIN", "SMAUG","BARD"));	
+//	}
 	
+	@Test
+	public void shouldFindHorizontalForwardsWords() {
+		WordSearch hobbit = new WordSearch();
+		ArrayList<String> result = hobbit.search(wordMatrix, wordList);
+		assertThat(result, containsInAnyOrder("NORI", "WILLIAM", "ORI", "SMAUG","BILBOBAGGINS", "BERT"));
+	}
 	
 	
 	
